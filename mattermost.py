@@ -73,7 +73,7 @@ print(foo.posts.get_posts_for_channel(channel_id))
 """
 
 """
-チャネルのポストをとってきて、posts部分だけ print
+チャネルのポストをとってきて、order部分だけ print
 """
 print(foo.posts.get_posts_for_channel(channel_id)["order"])
 
