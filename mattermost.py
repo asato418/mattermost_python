@@ -73,8 +73,20 @@ print(foo.posts.get_posts_for_channel(channel_id))
 """
 
 """
-チャネルのポストをとってきて、order部分だけ print
+チャネルのポスト全体をpost_dictに辞書形式で取得
+post_dictから、order_listを取得
+
 """
-print(foo.posts.get_posts_for_channel(channel_id)["order"])
-
-
+post_dict=foo.posts.get_posts_for_channel(channel_id)
+order_list=post_dict["order"]
+"""
+order_listを順番に処理。
+"""
+for i in range(0,len(order_list)):
+	"""
+	print(order_list[i],":",post_dict["posts"][order_list[i]]['message'])
+	"""
+	"""
+	ここでは、user_id と、postしたメッセージを一覧で出す。
+	"""
+	print(post_dict["posts"][order_list[i]]['user_id'],":",post_dict["posts"][order_list[i]]['message'])
